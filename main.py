@@ -2,8 +2,11 @@ import asyncio
 import pandas as pd
 import json
 import re
+import os
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from keep_alive import keep_alive
+keep_alive()
 
 # Credentials
 api_id = os.environ.get('id')
