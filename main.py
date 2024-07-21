@@ -6,7 +6,7 @@ keep_alive()
 # Replace these with your own values
 api_id = '26141034'
 api_hash = 'bae00b7eecb7d2492f549e44cee5658e'
-session_string = 'Amelia/Amelia.session'
+session_string = 'Amelia/Amelia'
 source_chat_id = '@TheRescue_Team'
 destination_chat_id = '@Hidden_in_matrix'
 
