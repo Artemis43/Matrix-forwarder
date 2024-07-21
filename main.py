@@ -9,12 +9,12 @@ keep_alive()
 
 api_id = os.environ.get('id')
 api_hash = os.environ.get('hash')
-session = os.environ.get('string')
+session_string = 'Amelia/Amelia'
 source_chat_username = os.environ.get('source')
 destination_chat_username = os.environ.get('destination')
 
 # Initialize the client
-app = Client(session_string=session, api_id=api_id, api_hash=api_hash)
+app = Client(session_string, api_id=api_id, api_hash=api_hash)
 
 magnet_regex = re.compile(r'magnet:\?xt=urn:btih:[a-zA-Z0-9]+.*') #[a-zA-Z0-9]
 
