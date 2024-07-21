@@ -51,7 +51,7 @@ def entities_to_dict(entities):
             else:
                 print("No magnet URL found")
     
-    return magnet_url_found
+    return magnet_url_found, magnet_url
 
 async def start_and_forward(client: Client, message: Message):
     if message.text:
