@@ -16,7 +16,7 @@ destination_chat_username = os.environ.get('destination')
 # Initialize the client
 app = Client(session_string, api_id=api_id, api_hash=api_hash)
 
-magnet_regex = re.compile(r'magnet:\?xt=urn:btih:+.*') #[a-zA-Z0-9]
+magnet_regex = re.compile(r'magnet:\?xt=urn:btih:[a-zA-Z0-9]+.*') #[a-zA-Z0-9]
 
 # Load match_names.csv
 try:
