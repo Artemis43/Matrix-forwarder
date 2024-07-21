@@ -66,6 +66,8 @@ async def start_and_forward(client: Client, message: Message):
         game_name = None
         if magnet_url_found:
             game_name = find_game_name(magnet_url_found)
+
+        await asyncio.sleep(5)
         
         # Send the appropriate message based on whether a game name was found
         if game_name:
