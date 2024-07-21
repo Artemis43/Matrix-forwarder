@@ -1,2 +1,4 @@
 Pyrogram
+asyncio
+pandas
 Flask
