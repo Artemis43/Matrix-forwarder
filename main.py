@@ -71,7 +71,7 @@ async def start_and_forward(client: Client, message: Message):
         if game_name:
             await client.send_message(destination_chat_username, f"/createfolder {game_name}")
         else:
-            await client.send_message(destination_chat_username, "/createfolder {game_name}")
+            await client.send_message(destination_chat_username, f"/createfolder {magnet_url}")
     elif message.media:
         # Forward the media message untouched
         await client.forward_messages(destination_chat_username, message.chat.id, [message.id])
