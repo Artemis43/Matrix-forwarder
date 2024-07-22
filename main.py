@@ -9,7 +9,7 @@ keep_alive()
 
 api_id = os.environ.get('id')
 api_hash = os.environ.get('hash')
-session_string = 'Tele/Amelia'
+session_string = os.environ.get('session')
 source_chat_username = os.environ.get('source')
 destination_chat_username = os.environ.get('destination')
 
