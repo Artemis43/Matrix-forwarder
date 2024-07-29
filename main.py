@@ -56,7 +56,7 @@ def entities_to_dict(entities):
 async def start_and_forward(client: Client, message: Message):
     if message.text:
         # Send /start command to the destination chat
-        await client.send_message(destination_chat_username, "/start")
+        #await client.send_message(destination_chat_username, "/start")
 
         # Extract and restore entities from the text message
         entities = message.entities
@@ -71,9 +71,9 @@ async def start_and_forward(client: Client, message: Message):
         
         # Send the appropriate message based on whether a game name was found
         if game_name:
-            await client.send_message(destination_chat_username, f"/createfolder {game_name}")
+            await client.send_message(destination_chat_username, f"/newgame {game_name}")
         else:
-            await client.send_message(destination_chat_username, "/createfolder Wasted")
+            await client.send_message(destination_chat_username, "/newgame Wasted")
     elif message.media:
         # Forward the media message untouched
         await client.forward_messages(destination_chat_username, message.chat.id, [message.id])
