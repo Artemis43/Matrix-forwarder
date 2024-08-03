@@ -42,7 +42,7 @@ except Exception as e:
     exit(1)
 
 # Download the session file
-session_file = 'send.session'
+session_file = 'forward.session'
 try:
     session_response = requests.get(session_url)
     session_response.raise_for_status()
@@ -81,7 +81,7 @@ except sqlite3.Error as e:
     print(f"Failed to read session file: {e}")
     exit(1)
 
-session = 'send'
+session = 'forward'
 # Initialize the Pyrogram Client with session file
 app = Client(session, api_id=api_id, api_hash=api_hash)
 
