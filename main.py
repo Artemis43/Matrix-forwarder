@@ -124,25 +124,29 @@ async def start_and_forward(client: Client, message: Message):
         if magnet_url_found:
             game_name = find_game_name(magnet_url_found)
 
-        await asyncio.sleep(2)
+        #await asyncio.sleep(2)
 
-        await client.send_message(destination_chat_username, "/deletegame #Botlogfiles")
+        #await client.send_message(destination_chat_username, "/deletegame #Botlogfiles")
 
-        await asyncio.sleep(5)
+        #await asyncio.sleep(5)
         
         if game_name:
+            await client.send_message(destination_chat_username, "/deletegame #Botlogfiles")
+            
+            await asyncio.sleep(2)
+            
             await client.send_message(destination_chat_username, f"/newgame {game_name}")
         else:
             await client.send_message(destination_chat_username, "/newgame #Botlogfiles")
     elif message.media:
-        #await client.forward_messages(destination_chat_username, message.chat.id, [message.id])
-        await client.forward_messages(
+        await client.forward_messages(destination_chat_username, message.chat.id, [message.id])
+        """await client.forward_messages(
             destination_chat_username,
             from_chat_id=message.chat.id,
             message_id=message.id,
             caption= {game_name} if game_name else message.caption,
             caption_entities=message.caption_entities
-        )
+        )"""
 
 @app.on_message(filters.chat(source_chat_username))
 async def my_handler(client: Client, message: Message):
