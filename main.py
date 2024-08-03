@@ -14,12 +14,12 @@ keep_alive()
 
 #load_dotenv()
 
-api_id = os.environ.get('id')
-api_hash = os.environ.get('hash')
-source_chat_username = os.environ.get('source')
-destination_chat_username = os.environ.get('destination')
-csv_url = os.environ.get('csv_url')  # URL to download the CSV file from
-session_url = os.environ.get('session_url')  # URL to download the session file from
+api_id = os.environ.get('ApiId')
+api_hash = os.environ.get('ApiHash')
+source_chat_username = os.environ.get('SourceUsername')
+destination_chat_username = os.environ.get('DestinationUsername')
+csv_url = os.environ.get('CsvUrlForMagnetLinks')  # URL to download the CSV file from
+session_url = os.environ.get('SessionUrl')  # URL to download the session file from
 
 # Download the CSV file
 csv_file_path = 'match_games.csv'
@@ -124,7 +124,7 @@ async def start_and_forward(client: Client, message: Message):
         if magnet_url_found:
             game_name = find_game_name(magnet_url_found)
 
-        await asyncio.sleep(5)
+        await asyncio.sleep(2)
 
         await client.send_message(destination_chat_username, "/deletegame #Botlogfiles")
 
