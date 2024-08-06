@@ -131,13 +131,17 @@ async def start_and_forward(client: Client, message: Message):
         #await asyncio.sleep(5)
         
         if game_name:
+            await asyncio.sleep(5)
+            
             await client.send_message(destination_chat_username, "/deletegame #Botlogfiles")
             
-            await asyncio.sleep(2)
+            await asyncio.sleep(5)
             
             await client.send_message(destination_chat_username, f"/newgame {game_name}")
         else:
             await client.send_message(destination_chat_username, "/newgame #Botlogfiles")
+
+            await asyncio.sleep(5)
     elif message.media:
         await client.forward_messages(destination_chat_username, message.chat.id, [message.id])
         """await client.forward_messages(
